@@ -25,7 +25,7 @@ from sqlalchemy import create_engine
 pathprefix='/home/ecoslacker/Documents/WINDS_Data/'
 # sys.path.append(pathprefix)
 
-db=create_engine('mysql://root:@127.0.0.1:3306/winds_test')
+db=create_engine('mysql://root:@127.0.0.1:3306/test')
 Guar_data = pd.read_sql('SELECT * from Aquacrop_crop_table',con=db)  #Reads all data from mysql db
 
 #test
