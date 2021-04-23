@@ -25,8 +25,8 @@ from sqlalchemy import create_engine
 pathprefix='/home/ecoslacker/Documents/WINDS_Data/'
 # sys.path.append(pathprefix)
 
-db=create_engine('mysql://root:@127.0.0.1:3306/test')
-Guar_data = pd.read_sql('SELECT * from Aquacrop_crop_table',con=db)  #Reads all data from mysql db
+db=create_engine('mysql://be423:BE_423_Spring2020@be423.cdzagwevzppe.us-west-1.rds.amazonaws.com:3306/StudentAquacropTables')
+Guar_data = pd.read_sql('SELECT * from aquacrop_crop_table',con=db)  #Reads all data from mysql db
 
 #test
 class plant_data:
@@ -113,7 +113,7 @@ class plant_data:
         self.bsted = float(Guar_data['bsted']); # WP co2 adjustment parameter given by Steduto et al. 2007
         self.bface = float(Guar_data['bface']); # WP co2 adjustment parameter given by FACE experiments
             
-Guar_data_in = Guar_data.loc[(Guar_data['User']=='Pete') & (Guar_data['Crop Name']== 'Guar')]
+Guar_data_in = Guar_data.loc[(Guar_data['User']=='Jacob') & (Guar_data['Crop Name']== 'Guar')]
 P = plant_data(Guar_data_in)
 
 print('Crop type', P.Crop_type)

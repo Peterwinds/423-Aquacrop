@@ -4,11 +4,11 @@ pymysql.install_as_MySQLdb()
 from sqlalchemy import create_engine
 
 
-db=create_engine('mysql://root:@127.0.0.1:3306/winds_test')
+db=create_engine('mysql://be423:BE_423_Spring2020@be423.cdzagwevzppe.us-west-1.rds.amazonaws.com:3306/StudentAquacropTables')
 connection = db.raw_connection()
 cursor = connection.cursor()
 
-myfile1="Aquacrop_crop_table_423.csv"
+myfile1="Aquacrop_crop_table_to_database_423.csv"
 
 df_file=pd.read_csv(myfile1,sep=",")
 
